@@ -1,0 +1,35 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8
+\documentclass[varwidth,border={-1.5cm 1cm 1cm 1cm}]{standalone}
+\usepackage{amsmath}
+\usepackage[math]{mathspec}
+\setmainfont{Linux Libertine O}
+\setmathfont(Digits,Latin)[Uppercase=Regular]{Linux Libertine O}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{document}
+\begin{center}
+\begin{tabular}{rr>{\centering\arraybackslash}m{2em}>{\centering\arraybackslash}m{2em}@{}}
+& & \multicolumn{2}{c}{classification} \\
+& & $p$ & \multicolumn{1}{|c}{$\neg p$} \\ \cline{3-4}
+\multirow{2}{*}{\rotatebox[origin=c]{90}{stimulus}} & $p$ & \multicolumn{1}{|c}{H} & \multicolumn{1}{|c|}{M} \\ \cline{2-4}
+& $\neg p$ & \multicolumn{1}{|c}{F} & \multicolumn{1}{|c|}{C} \\ \cline{3-4}
+\end{tabular}
+\end{center}
+
+\vspace{\baselineskip}
+
+\addtolength{\jot}{1em}
+\begin{align*}
+\frac{H}{H + M} &= \text{hit rate, recall, sensitivity} \\
+\frac{H}{H + F} &= \text{precision} \\
+\frac{F}{F + C} &= \text{false alarm rate} \\
+\frac{C}{F + C} &= \text{specificity} \\
+\frac{H + C}{H + M + F + C} &= \text{accuracy} \\
+\frac{M + F}{H + M + F + C} &= \text{error rate} \\
+z\left(\frac{H}{H + M}\right) - z\left(\frac{F}{F + C}\right) &= d^{\thinspace\prime}
+\end{align*}
+\end{document}
